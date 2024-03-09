@@ -1,0 +1,124 @@
+.card-item {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+
+  .card-item-image {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background: #000;
+    border-radius: 50%;
+    margin-right: 40px;
+    z-index: 0;
+    animation: scaleOn .5s ease forwards;
+
+    img {
+      position: absolute;
+      top: -51px;
+      left: -25px;
+      width: 150%;
+      transform: rotate(-28deg);
+    }
+  }
+  .card-item-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    width: calc(100% - 140px);
+
+    .card-item-name {
+      position: relative;
+      opacity: 0;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      height: 21px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      scrollbar-width: none;
+      animation: showInfo .3s ease .5s forwards;
+    }
+    .card-item-price {
+      position: relative;
+      opacity: 0;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      animation: showInfo .3s ease .7s forwards;
+    }
+    .card-item-actions {
+      position: relative;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: showInfo .3s ease .9s forwards;
+
+      .card-item-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        img {
+            width: 60%;
+        }
+      }
+
+      .card-item-count {
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .mp-icon {
+            background-color: #ddd;
+        }
+
+        .count-number {
+            width: 30px;
+            text-align: center;
+            margin: 0;
+        }
+      }
+      .card-item-remove {
+        .t-icon {
+            background-color: var(--yellow);
+        }
+      }
+    }
+  }
+}
+
+.scale-animation {
+  animation: scaleIn .5s ease forwards;
+}
+@keyframes showInfo {
+  from {
+    opacity: 0;
+    left: 50%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes scaleOn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(100%);
+  }
+}
+@keyframes scaleIn {
+  to {
+    transform: scale(0);
+  }
+}

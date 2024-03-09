@@ -1,0 +1,20 @@
+.home-wrapper {
+    width: 800px;
+    height: 100vh;
+    padding: 20px 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    overflow: auto;
+    scrollbar-width: none;
+    box-sizing: border-box;
+}
+
+@media (max-width: 840px) {
+    .home-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
